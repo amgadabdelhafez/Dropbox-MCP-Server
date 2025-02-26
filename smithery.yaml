@@ -1,0 +1,18 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      dropboxAccessToken:
+        type: string
+        description: Optional Dropbox access token. If not provided, the server expects
+          the token to be set as an environment variable.
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    (config) => { const env = {}; if(config.dropboxAccessToken){ env.DROPBOX_ACCESS_TOKEN = config.dropboxAccessToken; } return { command: 'node', args: ['./build/index.js'], env }; }
+  exampleConfig:
+    dropboxAccessToken: example_token_12345
