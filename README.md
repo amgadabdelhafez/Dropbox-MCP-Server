@@ -1,5 +1,7 @@
 # Dropbox MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@amgadabdelhafez/Dropbox-MCP-Server)](https://smithery.ai/server/@amgadabdelhafez/Dropbox-MCP-Server)
+
 This is a Model Context Protocol (MCP) server that integrates with Dropbox. It exposes a set of Dropbox operations as MCP tools, allowing MCP-compatible clients to interact with Dropbox.
 
 ## Tools
